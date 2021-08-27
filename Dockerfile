@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM microros/base:galactic
 RUN dpkg --add-architecture i386 && \
     export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
