@@ -1,7 +1,7 @@
-FROM microros/base:galactic
+FROM microros/micro-ros-agent
 RUN dpkg --add-architecture i386 && \
     export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update && \
+    apt-get update; \
     apt-get install -y \
         sudo \
         cmake \
@@ -38,5 +38,6 @@ COPY ./config/isc-dhcp-server /etc/default/isc-dhcp-server
 COPY ./config/.gdbinit /root/
 
 RUN chmod +x /init_vm_network.sh
-ENTRYPOINT /init_vm_network.sh && bash
+ENTRYPOINT ["/micro-ros_entrypoint.sh && /init_vm_network.sh"]
+CMD ["bash"]
 
