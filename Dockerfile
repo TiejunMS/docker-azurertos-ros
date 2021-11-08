@@ -25,6 +25,7 @@ RUN dpkg --add-architecture i386 && \
         cgdb \
         dos2unix \
         gawk && \
+    apt-get install -y nodejs npm && \
     apt-get install -y \
         git build-essential gcc-arm-none-eabi python3-pip cmake ninja-build \
         libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib g++-multilib \
