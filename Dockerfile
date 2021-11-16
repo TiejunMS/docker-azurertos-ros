@@ -42,6 +42,5 @@ COPY ./config/isc-dhcp-server /etc/default/isc-dhcp-server
 COPY ./config/.gdbinit /root/
 
 RUN chmod +x /init_vm_network.sh
-ENTRYPOINT ["/micro-ros_entrypoint.sh && /init_vm_network.sh"]
-CMD ["bash"]
+ENTRYPOINT ["/bin/bash"]
 
